@@ -6,7 +6,7 @@
 /*   By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 13:48:12 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/06 15:18:27 by momahrou         ###   ########.fr       */
+/*   Updated: 2025/11/10 11:39:06 by momahrou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_strlen(char *string);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	i;
+	size_t			i;
 	unsigned int	len_dest;
 
 	len_dest = ft_strlen(dst);
