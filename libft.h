@@ -6,7 +6,7 @@
 /*   By: medali <medali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:29:58 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/10 13:43:02 by medali           ###   ########.fr       */
+/*   Updated: 2025/11/11 00:26:18 by medali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_memcpy(void *dest, void *src, size_t n);
 void	*ft_memmove(void *dest, void *src, size_t count);
 void	*ft_memset(void *dest, int c, size_t count);
 char	*ft_strchr(char *string, int searchedChar );
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlen(char *string);
 int		ft_strncmp(char *first, char *second, size_t length);
@@ -37,5 +37,6 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	*ft_calloc(size_t num, size_t size);
 char	*ft_strdup(char *source);
+char	*ft_strrchr(char *string, int searchedChar);
 
 #endif

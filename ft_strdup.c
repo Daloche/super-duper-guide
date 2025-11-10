@@ -6,7 +6,7 @@
 /*   By: medali <medali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 10:45:57 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/10 13:43:58 by medali           ###   ########.fr       */
+/*   Updated: 2025/11/10 21:38:56 by medali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(char *source)
 {
 	char	*dup;
 
-	dup = (char *)malloc(sizeof(char) * ft_strlen(source));
-	ft_memcpy(dup, source, sizeof(char) * ft_strlen(source));
+	dup = (char *)malloc(sizeof(char) * (ft_strlen(source) + 1));
+	ft_memcpy(dup, source, sizeof(char) * (ft_strlen(source) + 1));
 	return (dup);
 }

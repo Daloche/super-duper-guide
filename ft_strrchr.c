@@ -6,7 +6,7 @@
 /*   By: medali <medali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 09:54:16 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/10 13:51:25 by medali           ###   ########.fr       */
+/*   Updated: 2025/11/11 00:29:40 by medali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ char	*ft_strrchr(char *string, int searchedChar)
 	{
 		if (string[len_string] == searchedChar)
 		{
-			return (&string[len_string]);
+			break;
 		}
 		len_string--;
 	}
+	if(string[len_string] == searchedChar)
+		return (string + len_string);
 	return (NULL);
 }
