@@ -6,7 +6,7 @@
 /*   By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 11:09:45 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/05 12:49:53 by momahrou         ###   ########.fr       */
+/*   Updated: 2025/11/06 14:33:19 by momahrou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dest, void *src, size_t n)
 	strdest = (char *) dest;
 	strsrc = (char *) src;
 	i = 0;
-	while (i <= n)
+	while (i < n)
 	{
 		strdest[i] = strsrc[i];
 		i++;

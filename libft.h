@@ -6,7 +6,7 @@
 /*   By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:29:58 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/06 10:48:19 by momahrou         ###   ########.fr       */
+/*   Updated: 2025/11/10 10:46:25 by momahrou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ char	*ft_strnstr(char *str, char *to_find, size_t n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	*ft_calloc(size_t num, size_t size);
+char	*ft_strdup(char *source);
 
 #endif

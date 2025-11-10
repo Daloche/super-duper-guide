@@ -6,7 +6,7 @@
 /*   By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 12:38:16 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/06 14:26:56 by momahrou         ###   ########.fr       */
+/*   Updated: 2025/11/06 09:57:25 by momahrou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_atoi(char *str)
 	nb_tiret = 0;
 	nb_plus = 0;
 	nb_tiret += count_tiret(str, &i, nb_tiret, &nb_plus);
-	if (nb_plus != 1 || nb_tiret != 1)
+	if (nb_plus > 1 || nb_tiret > 1)
 	{
 		return 0;
 	}
@@ -58,3 +58,4 @@ int	ft_atoi(char *str)
 		nb_str *= -1;
 	return (nb_str);
 }
+

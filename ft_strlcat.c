@@ -6,30 +6,26 @@
 /*   By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 13:48:12 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/04 14:00:48 by momahrou         ###   ########.fr       */
+/*   Updated: 2025/11/06 15:18:27 by momahrou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
+int	ft_strlen(char *string);
+
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int		i;
-	int		j;
-	size_t	h;
+	size_t	i;
+	unsigned int	len_dest;
 
+	len_dest = ft_strlen(dst);
 	i = 0;
-	j = 0;
-	h = 0;
-	while (dst[i])
-		i++;
-	while (src[j])
-		j++;
-	while (i + h < size - 1 && src[h])
+	while (src[i] && i < size)
 	{
-		dst[i + h] = src[h];
-		h++;
+		dst[len_dest + i] = src[i];
+		i++;
 	}
-	dst[size] = '\0';
-	return (i + h);
+	dst[len_dest + i] = '\0';
+	return (len_dest + i);
 }

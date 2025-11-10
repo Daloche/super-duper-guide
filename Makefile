@@ -6,7 +6,7 @@
 #    By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/03 09:43:12 by momahrou          #+#    #+#              #
-#    Updated: 2025/11/06 14:12:37 by momahrou         ###   ########.fr        #
+#    Updated: 2025/11/06 11:53:14 by momahrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ libft = ft_atoi.c 	\
 	ft_strrchr.c 	\
 	ft_tolower.c 	\
 	ft_toupper.c	\
-	main.c			\
 
 OBJ = $(libft:.c=.o)
 
@@ -44,7 +43,6 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	ar rcs $(NAME) $(OBJ)
-	$(CC) -o $@ $^ $(CFLAGS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

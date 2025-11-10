@@ -6,27 +6,23 @@
 /*   By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 11:48:09 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/06 12:08:00 by momahrou         ###   ########.fr       */
+/*   Updated: 2025/11/10 09:46:49 by momahrou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memmove(void *dest, void *src, size_t count)
+void	*ft_memcpy(void *dest, void *src, size_t n);
+
+void	*ft_memmove(void *dest, void *src, size_t C)
 {
 	char	*strdest;
 	char	*strsrc;
-	size_t	i;
-	char	temp;
+	char	temp[C];
 
-	i = 0;
 	strdest = (char *) dest;
 	strsrc = (char *) src;
-	while (i < count)
-	{
-		temp = strsrc[i];
-		strdest[i] = temp;
-		i++;
-	}
+	ft_memcpy(temp, strsrc, C);
+	ft_memcpy(strdest, temp, C);
 	return ((void *) strdest);
 }

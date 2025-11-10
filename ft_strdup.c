@@ -5,27 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 09:59:18 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/06 10:05:18 by momahrou         ###   ########.fr       */
+/*   Created: 2025/11/10 10:45:57 by momahrou          #+#    #+#             */
+/*   Updated: 2025/11/10 10:56:36 by momahrou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
 
-int	ft_strlen(char *string);
+int		ft_strlen(char *string);
+void	*ft_memcpy(void *dest, void *src, size_t n);
 
 char	*ft_strdup(char *source)
 {
 	char	*dup;
-	int		i;
 
-	dup = malloc(sizeof(char) * ft_strlen(source));
-	i = 0;
-	while (source[i])
-	{
-		dup[i] = source[i];
-		i++;
-	}
+	dup = (char *)malloc(sizeof(char) * ft_strlen(source));
+	ft_memcpy(dup, source, sizeof(char) * ft_strlen(source));
 	return (dup);
 }

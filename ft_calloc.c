@@ -6,7 +6,7 @@
 /*   By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 09:46:26 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/06 11:58:57 by momahrou         ###   ########.fr       */
+/*   Updated: 2025/11/10 09:45:09 by momahrou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,19 @@
 
 void	*ft_calloc(size_t num, size_t size)
 {
-	char	*arr;
+	char	*mem;
 	size_t	i;
 
-	arr = malloc(size);
+	mem = malloc(num * size);
 	i = 0;
-	while (i < size)
+	if (num <= 0 || size <= 0)
 	{
-		arr[i] = num;
-		i++;
+		return (NULL);
 	}
-	return (arr);
+	while (i < num * size)
+	{
+		mem[i] = 0;
+		i += size;
+	}
+	return (mem);
 }
