@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: medali <medali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 14:18:02 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/04 11:39:10 by momahrou         ###   ########.fr       */
+/*   Updated: 2025/11/10 13:50:56 by medali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *string)
+#include <stddef.h>
+
+size_t	ft_strlen(char *string)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (string[i])

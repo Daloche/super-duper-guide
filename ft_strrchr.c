@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: medali <medali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 09:54:16 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/05 12:52:11 by momahrou         ###   ########.fr       */
+/*   Updated: 2025/11/10 13:51:25 by medali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strlen(char *string);
+size_t	ft_strlen(char *string);
 
 char	*ft_strrchr(char *string, int searchedChar)
 {
-	int	len_string;
+	size_t	len_string;
 
 	len_string = ft_strlen(string);
-	while (len_string >= 0)
+	while (len_string > 0)
 	{
 		if (string[len_string] == searchedChar)
 		{

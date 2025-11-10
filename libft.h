@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: medali <medali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:29:58 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/10 10:46:25 by momahrou         ###   ########.fr       */
+/*   Updated: 2025/11/10 13:43:02 by medali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stddef.h>
+# include <stddef.h>
 
 int		ft_atoi(char *str);
 void	ft_bzero(void *str, size_t n);
@@ -30,7 +30,7 @@ void	*ft_memset(void *dest, int c, size_t count);
 char	*ft_strchr(char *string, int searchedChar );
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-int		ft_strlen(char *string);
+size_t	ft_strlen(char *string);
 int		ft_strncmp(char *first, char *second, size_t length);
 char	*ft_strnstr(char *str, char *to_find, size_t n);
 int		ft_tolower(int c);

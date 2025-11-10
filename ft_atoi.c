@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: medali <medali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 12:38:16 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/06 09:57:25 by momahrou         ###   ########.fr       */
+/*   Updated: 2025/11/10 12:32:07 by medali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ int	count_tiret(char *str, int *i, int nb_tiret, int *nbr_plus)
 			nb_tiret++;
 		else if (str[*i] == '+')
 		{
-			*nbr_plus+=1;
+			*nbr_plus += 1;
 		}
-		
-		
-		*i+=1;
+		*i += 1;
 	}
 	return (nb_tiret);
 }
@@ -37,7 +35,7 @@ int	ft_atoi(char *str)
 {
 	int	nb_str;
 	int	nb_tiret;
-	int nb_plus;
+	int	nb_plus;
 	int	i;
 
 	i = 0;
@@ -46,7 +44,7 @@ int	ft_atoi(char *str)
 	nb_tiret += count_tiret(str, &i, nb_tiret, &nb_plus);
 	if (nb_plus > 1 || nb_tiret > 1)
 	{
-		return 0;
+		return (0);
 	}
 	nb_str = 0;
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
@@ -58,4 +56,3 @@ int	ft_atoi(char *str)
 		nb_str *= -1;
 	return (nb_str);
 }
-
