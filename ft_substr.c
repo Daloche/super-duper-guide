@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 09:54:16 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/11 10:03:14 by momahrou         ###   ########.fr       */
+/*   Created: 2025/11/11 10:33:15 by momahrou          #+#    #+#             */
+/*   Updated: 2025/11/11 11:01:49 by momahrou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stddef.h>
+#include <stdlib.h>
 
-size_t	ft_strlen(char *string);
-
-char	*ft_strrchr(char *string, int searchedChar)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	len_string;
+	char	*subs;
+	size_t	i;
 
-	len_string = ft_strlen(string);
-	while (len_string > 0)
+	subs = (char *)malloc(sizeof(char) * len + 1);
+	i = 0;
+	while (i < len)
 	{
-		if (string[len_string] == searchedChar)
-		{
-			break ;
-		}
-		len_string--;
+		subs[i] = s[start + i];
+		i++;
 	}
-	if (string[len_string] == searchedChar)
-		return (string + len_string);
-	return (NULL);
+	subs[i] = '\0';
+	return (subs);
 }

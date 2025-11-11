@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 09:54:16 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/11 10:03:14 by momahrou         ###   ########.fr       */
+/*   Created: 2025/11/11 11:05:50 by momahrou          #+#    #+#             */
+/*   Updated: 2025/11/11 11:52:26 by momahrou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stddef.h>
+#include <stdlib.h>
 
-size_t	ft_strlen(char *string);
+size_t	ft_strlcat(char *dst, char *src, size_t size);
+void	*ft_memcpy(void *dest, void *src, size_t n);
 
-char	*ft_strrchr(char *string, int searchedChar)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len_string;
-
-	len_string = ft_strlen(string);
-	while (len_string > 0)
+	if (s2)
 	{
-		if (string[len_string] == searchedChar)
-		{
-			break ;
-		}
-		len_string--;
+		return (char *)s1;;
 	}
-	if (string[len_string] == searchedChar)
-		return (string + len_string);
-	return (NULL);
+	
+	return (char *)s1;
 }

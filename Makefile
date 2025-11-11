@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: medali <medali@student.42.fr>              +#+  +:+       +#+         #
+#    By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/03 09:43:12 by momahrou          #+#    #+#              #
-#    Updated: 2025/11/10 13:52:45 by medali           ###   ########.fr        #
+#    Updated: 2025/11/11 12:05:18 by momahrou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,8 @@ libft = ft_atoi.c 	\
 	ft_strrchr.c 	\
 	ft_tolower.c 	\
 	ft_toupper.c	\
+	ft_substr.c		\
+	ft_strjoin.c	\
 
 OBJ = $(libft:.c=.o)
 

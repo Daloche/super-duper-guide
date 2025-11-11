@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: medali <medali@student.42.fr>              +#+  +:+       +#+        */
+/*   By: momahrou <momahrou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:29:58 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/11 00:26:18 by medali           ###   ########.fr       */
+/*   Updated: 2025/11/11 12:04:58 by momahrou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ int		ft_toupper(int c);
 void	*ft_calloc(size_t num, size_t size);
 char	*ft_strdup(char *source);
 char	*ft_strrchr(char *string, int searchedChar);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
