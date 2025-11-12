@@ -6,7 +6,7 @@
 /*   By: medali <medali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 12:38:16 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/10 12:32:07 by medali           ###   ########.fr       */
+/*   Updated: 2025/11/12 13:38:11 by medali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,25 @@ int	count_tiret(char *str, int *i, int nb_tiret, int *nbr_plus)
 	return (nb_tiret);
 }
 
+int	count_no_nb(char *str)
+{
+	int	i;
+	int	countnonb;
+
+	i = 0;
+	countnonb = 0;
+	while (str[i])
+	{
+		if ((str[i] < '0' || str[i] > '9')
+			&& (str[i] < 9 || str[i] > 13) && str[i] != ' ')
+			countnonb++;
+		else
+			break ;
+		i++;
+	}
+	return (countnonb);
+}
+
 int	ft_atoi(char *str)
 {
 	int	nb_str;
@@ -43,16 +62,16 @@ int	ft_atoi(char *str)
 	nb_plus = 0;
 	nb_tiret += count_tiret(str, &i, nb_tiret, &nb_plus);
 	if (nb_plus > 1 || nb_tiret > 1)
-	{
 		return (0);
-	}
 	nb_str = 0;
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		nb_str = ((nb_str * 10) + (str[i] - '0'));
 		i++;
 	}
-	if (nb_tiret % 2 == 1)
+	if (nb_tiret == 1)
 		nb_str *= -1;
+	if (count_no_nb(str) > 1)
+		return (0);
 	return (nb_str);
 }

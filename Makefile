@@ -6,7 +6,7 @@
 #    By: medali <medali@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/03 09:43:12 by momahrou          #+#    #+#              #
-#    Updated: 2025/11/12 13:08:17 by medali           ###   ########.fr        #
+#    Updated: 2025/11/12 13:43:19 by medali           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ libft = ft_atoi.c 	\
 	ft_putnbr_fd.c	\
 	ft_strmapi.c	\
 	ft_striteri.c	\
+	ft_itoa.c		\
 
 OBJ = $(libft:.c=.o)
 
