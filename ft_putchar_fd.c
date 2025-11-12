@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: medali <medali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 10:16:57 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/11 13:30:35 by medali           ###   ########.fr       */
+/*   Created: 2025/11/12 10:55:29 by medali            #+#    #+#             */
+/*   Updated: 2025/11/12 11:01:26 by medali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-size_t	ft_strlen(char *string);
-
-int	ft_strncmp(char *first, char *second, size_t length)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < length)
-	{
-		if ((unsigned char)first[i] < (unsigned char)second[i])
-		{
-			return (-1);
-		}
-		else if (((unsigned char)first[i] > (unsigned char)second[i]))
-		{
-			return (1);
-		}
-		i++;
-	}
-	return (0);
+	write(fd, &c, 1);
 }

@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: medali <medali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 10:16:57 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/11 13:30:35 by medali           ###   ########.fr       */
+/*   Created: 2025/11/12 13:04:54 by medali            #+#    #+#             */
+/*   Updated: 2025/11/12 13:10:33 by medali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-size_t	ft_strlen(char *string);
-
-int	ft_strncmp(char *first, char *second, size_t length)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (i < length)
+	while (*s)
 	{
-		if ((unsigned char)first[i] < (unsigned char)second[i])
-		{
-			return (-1);
-		}
-		else if (((unsigned char)first[i] > (unsigned char)second[i]))
-		{
-			return (1);
-		}
+		f(i, s);
+		s++;
 		i++;
 	}
-	return (0);
 }

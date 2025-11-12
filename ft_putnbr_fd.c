@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: medali <medali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 10:16:57 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/11 13:30:35 by medali           ###   ########.fr       */
+/*   Created: 2025/11/12 11:14:23 by medali            #+#    #+#             */
+/*   Updated: 2025/11/12 11:31:48 by medali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-size_t	ft_strlen(char *string);
+void	ft_putchar_fd(char c, int fd);
 
-int	ft_strncmp(char *first, char *second, size_t length)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
+	char	c;
 
-	i = 0;
-	while (i < length)
+	if (n <= -2147483648)
 	{
-		if ((unsigned char)first[i] < (unsigned char)second[i])
-		{
-			return (-1);
-		}
-		else if (((unsigned char)first[i] > (unsigned char)second[i]))
-		{
-			return (1);
-		}
-		i++;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (0);
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n *= -1;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+	}
+	c = n % 10 + '0';
+	ft_putchar_fd(c, fd);
 }
