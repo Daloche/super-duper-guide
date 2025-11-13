@@ -6,7 +6,7 @@
 /*   By: medali <medali@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:39:04 by momahrou          #+#    #+#             */
-/*   Updated: 2025/11/12 16:39:27 by medali           ###   ########.fr       */
+/*   Updated: 2025/11/13 15:11:55 by medali           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 size_t	ft_strlen(char *string);
 void	*ft_memset(void *dest, int c, size_t count);
+void	*ft_memcpy(void *dest, void *src, size_t n);
+char	*ft_strdup(char *source);
 
-int count_nb_elem(int n)
+int	count_nb_elem(int n)
 {
-	int nb_elem;
+	int	nb_elem;
 
 	nb_elem = 0;
 	while (n > 0)
@@ -28,38 +30,84 @@ int count_nb_elem(int n)
 	return (nb_elem);
 }
 
-void reverse(char *str)
+void	reverse(char *str)
 {
-    char temp;
-    int debut = 0;
-    int fin = ft_strlen(str) - 1;
-    while (debut < fin)
-    {
-        temp = str[debut];
-        str[debut] = str[fin];
-        str[fin] = temp;
-        debut++;
-        fin--;
-    }
+	char	temp;
+	int		debut;
+	int		fin;
+
+	debut = 0;
+	fin = ft_strlen(str) - 1;
+	while (debut < fin)
+	{
+		temp = str[debut];
+		str[debut] = str[fin];
+		str[fin] = temp;
+		debut++;
+		fin--;
+	}
 }
 
-char *ft_itoa(int n)
+char	*cas_spe(int n)
 {
-	char *nb_str = malloc(count_nb_elem(n) + 1);
-	int isneg = 0;
-	if (n < 0)
+	char	*spe;
+
+	spe = malloc(sizeof(char) * 12);
+	if (n == 0)
 	{
-		isneg = 1;
-		n *= -1;
+		spe[0] = '0';
+		spe[1] = '\0';
 	}
-	int i = 0;
+	else if (n == -2147483648)
+	{
+		spe[0] = '-';
+		spe[1] = '2';
+		spe[2] = '1';
+		spe[3] = '4';
+		spe[4] = '7';
+		spe[5] = '4';
+		spe[6] = '8';
+		spe[7] = '3';
+		spe[8] = '6';
+		spe[9] = '4';
+		spe[10] = '8';
+		spe[11] = '\0';
+	}
+	return (spe);
+}
+
+int	is_neg(int *n)
+{
+	if (*n < 0)
+	{
+		*n = *n * -1;
+		return (1);
+	}
+	return (0);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*nb_str;
+	int		len_n;
+	int		isneg;
+
+	if (n == 0 || n == -2147483648)
+		return (cas_spe(n));
+	isneg = is_neg(&n);
+	len_n = 0;
+	nb_str = malloc(sizeof(char *) * count_nb_elem(n) + 2);
 	while (n > 0)
 	{
-		nb_str[i] = (n % 10) + '0';
+		nb_str[len_n] = (n % 10) + '0';
+		len_n++;
 		n /= 10;
-		i++;
 	}
-	nb_str[i] = '\0';
+	if (isneg == 1)
+	{
+		nb_str[len_n++] = '-';
+	}
+	nb_str[len_n] = '\0';
 	reverse(nb_str);
-	return(nb_str);
+	return (nb_str);
 }
